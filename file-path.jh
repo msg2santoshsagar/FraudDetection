@@ -1,0 +1,8 @@
+
+
+entity FilePath {
+	clientId Long,
+	fileParam String,
+	fileName String,
+	deleteFlag String
+}

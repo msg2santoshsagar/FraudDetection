@@ -1,0 +1,26 @@
+
+{
+    "fraudDetectionApp": {
+        "riskContributors" : {
+            "home": {
+                "title": "Risk Contributors",
+                "createLabel": "Create a new Risk Contributors",
+                "createOrEditLabel": "Create or edit a Risk Contributors"
+            },
+            "created": "A new Risk Contributors is created with identifier {{ param }}",
+            "updated": "A Risk Contributors is updated with identifier {{ param }}",
+            "deleted": "A Risk Contributors is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Risk Contributors {{ id }}?"
+            },
+            "detail": {
+                "title": "Risk Contributors"
+            },
+            "clientId": "Client Id",
+            "riskContributors": "Risk Contributors",
+            "description": "Description",
+            "weightage": "Weightage",
+            "deleteFlag": "Delete Flag"
+        }
+    }
+}

@@ -44,6 +44,8 @@ public class CacheConfiguration {
             cm.createCache(com.tcs.fraud_detection.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(com.tcs.fraud_detection.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(com.tcs.fraud_detection.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
+            cm.createCache(com.tcs.fraud_detection.domain.FilePath.class.getName(), jcacheConfiguration);
+            cm.createCache(com.tcs.fraud_detection.domain.RiskContributors.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

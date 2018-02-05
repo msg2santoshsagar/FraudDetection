@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "clientId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fileParam",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fileName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deleteFlag",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180205143530",
+    "entityTableName": "file_path",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

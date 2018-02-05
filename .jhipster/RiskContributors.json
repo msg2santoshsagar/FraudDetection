@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "clientId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "riskContributors",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "weightage",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "deleteFlag",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180205143817",
+    "entityTableName": "risk_contributors",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false
+}

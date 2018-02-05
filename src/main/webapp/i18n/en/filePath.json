@@ -1,0 +1,25 @@
+
+{
+    "fraudDetectionApp": {
+        "filePath" : {
+            "home": {
+                "title": "File Paths",
+                "createLabel": "Create a new File Path",
+                "createOrEditLabel": "Create or edit a File Path"
+            },
+            "created": "A new File Path is created with identifier {{ param }}",
+            "updated": "A File Path is updated with identifier {{ param }}",
+            "deleted": "A File Path is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete File Path {{ id }}?"
+            },
+            "detail": {
+                "title": "File Path"
+            },
+            "clientId": "Client Id",
+            "fileParam": "File Param",
+            "fileName": "File Name",
+            "deleteFlag": "Delete Flag"
+        }
+    }
+}

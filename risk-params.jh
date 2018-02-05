@@ -1,0 +1,9 @@
+
+
+entity RiskContributors {
+	clientId Long,
+	riskContributors String,
+	description String,
+	weightage Double, 
+    deleteFlag String
+}

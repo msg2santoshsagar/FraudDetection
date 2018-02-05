@@ -1,0 +1,42 @@
+
+<div *ngIf="riskContributors">
+    <h2><span jhiTranslate="fraudDetectionApp.riskContributors.detail.title">Risk Contributors</span> {{riskContributors.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="fraudDetectionApp.riskContributors.clientId">Client Id</span></dt>
+        <dd>
+            <span>{{riskContributors.clientId}}</span>
+        </dd>
+        <dt><span jhiTranslate="fraudDetectionApp.riskContributors.riskContributors">Risk Contributors</span></dt>
+        <dd>
+            <span>{{riskContributors.riskContributors}}</span>
+        </dd>
+        <dt><span jhiTranslate="fraudDetectionApp.riskContributors.description">Description</span></dt>
+        <dd>
+            <span>{{riskContributors.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="fraudDetectionApp.riskContributors.weightage">Weightage</span></dt>
+        <dd>
+            <span>{{riskContributors.weightage}}</span>
+        </dd>
+        <dt><span jhiTranslate="fraudDetectionApp.riskContributors.deleteFlag">Delete Flag</span></dt>
+        <dd>
+            <span>{{riskContributors.deleteFlag}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'risk-contributors/'+ riskContributors.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
