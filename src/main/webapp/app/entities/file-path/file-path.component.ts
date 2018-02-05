@@ -9,10 +9,11 @@ import { Principal } from '../../shared';
 
 @Component({
     selector: 'jhi-file-path',
-    templateUrl: './file-path.component.html'
+    templateUrl: './file-path-custom.component.html'
 })
 export class FilePathComponent implements OnInit, OnDestroy {
-filePaths: FilePath[];
+	
+	filePaths: FilePath[];
     currentAccount: any;
     eventSubscriber: Subscription;
 
@@ -53,5 +54,8 @@ filePaths: FilePath[];
 
     private onError(error) {
         this.jhiAlertService.error(error.message, null, null);
+    }
+    
+    selectNewFolder(){
     }
 }
