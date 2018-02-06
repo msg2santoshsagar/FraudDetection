@@ -11,6 +11,20 @@
 .btnGroup {
 	margin-bottom: 50px;
 }
+
+.listStyleTypeNone{
+	list-style-type: none
+}
+
+.selectable{
+	cursor: pointer;
+}
+
+.listActive{
+	font-weight: bold;
+    background-color: lightblue;
+}
+
 </style>
 
 <div>
@@ -26,17 +40,13 @@
 
 		<div class="col-md-4">
 			<span>File Parameters</span>
-			<button class="btn btn-primary btn-sm text-right pull-right">BROWSE</button>
 			<div class="clear"></div>
-			<div class="row fileParamsBox">
-				<ul>
-					<li>LIST 1</li>
-					<li>LIST 2</li>
-					<li>LIST 3</li>
-					<li>LIST 4</li>
-					<li>LIST 5</li>
-					<li>LIST 6</li>
-					<li>LIST 7</li>
+			<div class="fileParamsBox">
+				<ul class="listStyleTypeNone col-md-12">
+					<li class="selectable" *ngFor="let fileParams of fileParamsList"
+					(click)="selectFileParam(fileParams.name)"
+					[ngClass]="{'listActive' : selectedFileParam == fileParams.name}"
+					>{{fileParams.name}}</li>
 				</ul>
 			</div>
 		</div>
@@ -45,8 +55,8 @@
 
 		<div class="col-md-4">
 			<span>File Names</span>
-			<div class="row fileParamsBox">
-				<ul>
+			<div class="fileParamsBox">
+				<ul class="listStyleTypeNone col-md-12">
 					<li>LIST 1</li>
 					<li>LIST 2</li>
 					<li>LIST 3</li>
@@ -62,7 +72,7 @@
 
 		<div class="col-md-2 btnGroup">
 			<div class="row">
-				<button class="btn btn-primary btn-sm btnGroup">OPEN</button>
+				<button class="btn btn-primary btn-sm btnGroup" (click)="browse()">BROWSE</button>
 			</div>
 			<div class="row">
 				<button class="btn btn-primary btn-sm btnGroup">SAVE</button>

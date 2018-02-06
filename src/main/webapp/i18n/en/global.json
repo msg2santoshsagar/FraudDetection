@@ -9,6 +9,7 @@
                 "main": "Entities",
                 "filePath": "File Path",
                 "riskContributors": "Risk Contributors",
+                "fileParameters": "File Parameters",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

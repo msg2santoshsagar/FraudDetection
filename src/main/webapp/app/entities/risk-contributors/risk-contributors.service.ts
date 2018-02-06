@@ -26,6 +26,12 @@ export class RiskContributorsService {
         return this.http.put<RiskContributors>(this.resourceUrl, copy, { observe: 'response' })
             .map((res: EntityResponseType) => this.convertResponse(res));
     }
+    
+     updateList(riskContributors: RiskContributors[]): Observable<EntityResponseType> {
+      //  const copy = this.convert(riskContributors);
+        return this.http.put<RiskContributors>(this.resourceUrl+"/list", riskContributors, { observe: 'response' })
+            .map((res: EntityResponseType) => this.convertResponse(res));
+    }
 
     find(id: number): Observable<EntityResponseType> {
         return this.http.get<RiskContributors>(`${this.resourceUrl}/${id}`, { observe: 'response'})

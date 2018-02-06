@@ -1,0 +1,22 @@
+
+{
+    "fraudDetectionApp": {
+        "fileParameters" : {
+            "home": {
+                "title": "File Parameters",
+                "createLabel": "Create a new File Parameters",
+                "createOrEditLabel": "Create or edit a File Parameters"
+            },
+            "created": "A new File Parameters is created with identifier {{ param }}",
+            "updated": "A File Parameters is updated with identifier {{ param }}",
+            "deleted": "A File Parameters is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete File Parameters {{ id }}?"
+            },
+            "detail": {
+                "title": "File Parameters"
+            },
+            "name": "Name"
+        }
+    }
+}

@@ -1,0 +1,5 @@
+
+
+entity FileParameters {
+	name String,
+}

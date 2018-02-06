@@ -6,6 +6,7 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { RiskContributors } from './risk-contributors.model';
 import { RiskContributorsService } from './risk-contributors.service';
 import { Principal } from '../../shared';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'jhi-risk-contributors',
@@ -25,6 +26,14 @@ export class RiskContributorsComponent implements OnInit, OnDestroy {
       total:    0 
     };
     
+    impactAttributeId = {
+      impactToBrand:    0,
+      impactToCredibiity:   0,
+      financialLoss:    0,
+      complianceVoilation:  0,
+      badPractices: 0
+    };
+    
    updateTotal(){
     this.impactAttribute.total = this.impactAttribute.impactToBrand
     +this.impactAttribute.impactToCredibiity
@@ -35,20 +44,48 @@ export class RiskContributorsComponent implements OnInit, OnDestroy {
     
   update(){
     console.log("Req to update the data");
-    var data = {
+    const data = [{
+        id:this.impactAttributeId.impactToBrand,
         clientId:1500,
         riskContributors:"impactToBrand",
         weightage:this.impactAttribute.impactToBrand
-    };
-    this.riskContributorsService.create(data).subscribe();
+    },
+        {
+        id:this.impactAttributeId.impactToCredibiity,
+        clientId:1500,
+        riskContributors:"impactToCredibiity",
+        weightage:this.impactAttribute.impactToCredibiity
+    },
+        {
+        id:this.impactAttributeId.financialLoss,
+        clientId:1500,
+        riskContributors:"financialLoss",
+        weightage:this.impactAttribute.financialLoss
+    },{
+        id:this.impactAttributeId.complianceVoilation,
+        clientId:1500,
+        riskContributors:"complianceVoilation",
+        weightage:this.impactAttribute.complianceVoilation
+    },{
+        id:this.impactAttributeId.badPractices,
+        clientId:1500,
+        riskContributors:"badPractices",
+        weightage:this.impactAttribute.badPractices
+    }];
+    this.riskContributorsService.updateList(data).subscribe();
       
   }  
+    
+  cancel(){
+     this.router.navigate(['']);
+  }
      
     constructor(
         private riskContributorsService: RiskContributorsService,
         private jhiAlertService: JhiAlertService,
         private eventManager: JhiEventManager,
-        private principal: Principal
+        private principal: Principal,
+        private router: Router
     ) {
     }
 
@@ -56,6 +93,11 @@ export class RiskContributorsComponent implements OnInit, OnDestroy {
         this.riskContributorsService.query().subscribe(
             (res: HttpResponse<RiskContributors[]>) => {
                 this.riskContributors = res.body;
+                for(var i=0; i<this.riskContributors.length;i++){
+                    this.impactAttribute[this.riskContributors[i].riskContributors]=this.riskContributors[i].weightage;
+                    this.impactAttributeId[this.riskContributors[i].riskContributors]=this.riskContributors[i].id;
+                }
+                this.updateTotal();
             },
             (res: HttpErrorResponse) => this.onError(res.message)
         );
