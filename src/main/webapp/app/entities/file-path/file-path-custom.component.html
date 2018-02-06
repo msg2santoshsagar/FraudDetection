@@ -72,7 +72,9 @@
 
 		<div class="col-md-2 btnGroup">
 			<div class="row">
-				<button class="btn btn-primary btn-sm btnGroup" (click)="browse()">BROWSE</button>
+				<button class="btn btn-primary btn-sm btnGroup" 
+				[disabled]="selectedFileParam==null"
+				(click)="browse()">BROWSE</button>
 			</div>
 			<div class="row">
 				<button class="btn btn-primary btn-sm btnGroup">SAVE</button>
