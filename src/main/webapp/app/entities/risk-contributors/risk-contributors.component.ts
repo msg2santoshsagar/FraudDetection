@@ -35,6 +35,13 @@ export class RiskContributorsComponent implements OnInit, OnDestroy {
     
   update(){
     console.log("Req to update the data");
+    var data = {
+        clientId:1500,
+        riskContributors:"impactToBrand",
+        weightage:this.impactAttribute.impactToBrand
+    };
+    this.riskContributorsService.create(data).subscribe();
+      
   }  
      
     constructor(
