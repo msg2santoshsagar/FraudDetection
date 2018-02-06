@@ -9,13 +9,34 @@ import { Principal } from '../../shared';
 
 @Component({
     selector: 'jhi-risk-contributors',
-    templateUrl: './risk-contributors.component.html'
+    templateUrl: './risk-contributors-custom.component.html'
 })
 export class RiskContributorsComponent implements OnInit, OnDestroy {
-riskContributors: RiskContributors[];
+    riskContributors: RiskContributors[];
     currentAccount: any;
     eventSubscriber: Subscription;
 
+    impactAttribute = {
+      impactToBrand:    0,
+      impactToCredibiity:   0,
+      financialLoss:    0,
+      complianceVoilation:  0,
+      badPractices: 0,
+      total:    0 
+    };
+    
+   updateTotal(){
+    this.impactAttribute.total = this.impactAttribute.impactToBrand
+    +this.impactAttribute.impactToCredibiity
+    +this.impactAttribute.financialLoss
+    +this.impactAttribute.complianceVoilation
+    +this.impactAttribute.badPractices;
+   }
+    
+  update(){
+    console.log("Req to update the data");
+  }  
+     
     constructor(
         private riskContributorsService: RiskContributorsService,
         private jhiAlertService: JhiAlertService,
