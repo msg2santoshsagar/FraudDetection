@@ -27,6 +27,12 @@ export class FilePathService {
             .map((res: EntityResponseType) => this.convertResponse(res));
     }
 
+    updateList(filePath: FilePath[]): Observable<EntityResponseType> {
+       // const copy = this.convert(filePath);
+        return this.http.put<FilePath>(this.resourceUrl+"/list", filePath, { observe: 'response' })
+            .map((res: EntityResponseType) => this.convertResponse(res));
+    }
+
     find(id: number): Observable<EntityResponseType> {
         return this.http.get<FilePath>(`${this.resourceUrl}/${id}`, { observe: 'response'})
             .map((res: EntityResponseType) => this.convertResponse(res));

@@ -76,6 +76,19 @@ public class FilePathResource {
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, filePath.getId().toString()))
             .body(result);
     }
+    
+    @PutMapping("/file-paths/list")
+    @Timed
+    public ResponseEntity<List<FilePath>> updateFilePathList(@RequestBody List<FilePath> filePath) throws URISyntaxException {
+        log.debug("REST request to update FilePath : {}", filePath);
+       /* if (filePath.getId() == null) {
+            return createFilePath(filePath);
+        }*/
+        List<FilePath> result = filePathRepository.save(filePath);
+        return ResponseEntity.ok()
+            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, ""))
+            .body(result);
+    }
 
     /**
      * GET  /file-paths : get all the filePaths.

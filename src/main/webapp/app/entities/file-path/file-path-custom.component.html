@@ -25,6 +25,10 @@
     background-color: lightblue;
 }
 
+.listItem{
+	min-height: 18px;
+}
+
 </style>
 
 <div>
@@ -43,10 +47,10 @@
 			<div class="clear"></div>
 			<div class="fileParamsBox">
 				<ul class="listStyleTypeNone col-md-12">
-					<li class="selectable" *ngFor="let fileParams of fileParamsList"
-					(click)="selectFileParam(fileParams.name)"
-					[ngClass]="{'listActive' : selectedFileParam == fileParams.name}"
-					>{{fileParams.name}}</li>
+					<li class="selectable" *ngFor="let filePath of filePaths"
+					(click)="selectFileParam(filePath.fileParam)"
+					[ngClass]="{'listActive' : selectedFileParam == filePath.fileParam}"
+					>{{filePath.fileParam}}</li>
 				</ul>
 			</div>
 		</div>
@@ -56,14 +60,8 @@
 		<div class="col-md-4">
 			<span>File Names</span>
 			<div class="fileParamsBox">
-				<ul class="listStyleTypeNone col-md-12">
-					<li>LIST 1</li>
-					<li>LIST 2</li>
-					<li>LIST 3</li>
-					<li>LIST 4</li>
-					<li>LIST 5</li>
-					<li>LIST 6</li>
-					<li>LIST 7</li>
+				<ul class="listStyleTypeNone col-md-12" >
+					<li class="listItem" *ngFor="let filePath of filePaths">{{filePath.fileName}}</li>
 				</ul>
 			</div>
 		</div>
@@ -77,10 +75,10 @@
 				(click)="browse()">BROWSE</button>
 			</div>
 			<div class="row">
-				<button class="btn btn-primary btn-sm btnGroup">SAVE</button>
+				<button class="btn btn-primary btn-sm btnGroup" (click)="save()">SAVE</button>
 			</div>
 			<div class="row">
-				<button class="btn btn-primary btn-sm btnGroup">CANCEL</button>
+				<button class="btn btn-primary btn-sm btnGroup" (click)="cancel()">CANCEL</button>
 			</div>
 		</div>
 

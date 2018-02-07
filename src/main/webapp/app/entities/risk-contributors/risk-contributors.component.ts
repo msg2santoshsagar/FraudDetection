@@ -6,7 +6,7 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { RiskContributors } from './risk-contributors.model';
 import { RiskContributorsService } from './risk-contributors.service';
 import { Principal } from '../../shared';
-import {Router} from "@angular/router";
+import { Router} from "@angular/router";
 
 @Component({
     selector: 'jhi-risk-contributors',
