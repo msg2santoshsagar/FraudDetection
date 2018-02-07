@@ -23,8 +23,8 @@ export class RiskContributorsComponent implements OnInit, OnDestroy {
       financialLoss:    0,
       complianceVoilation:  0,
       badPractices: 0,
-      total:    0 
-    };
+      total:0
+      };
     
     impactAttributeId = {
       impactToBrand:    0,
@@ -35,11 +35,12 @@ export class RiskContributorsComponent implements OnInit, OnDestroy {
     };
     
    updateTotal(){
-    this.impactAttribute.total = this.impactAttribute.impactToBrand
+    const sum = this.impactAttribute.impactToBrand
     +this.impactAttribute.impactToCredibiity
     +this.impactAttribute.financialLoss
     +this.impactAttribute.complianceVoilation
     +this.impactAttribute.badPractices;
+    this.impactAttribute.total = this.round(sum);
    }
     
   update(){
@@ -123,5 +124,9 @@ export class RiskContributorsComponent implements OnInit, OnDestroy {
 
     private onError(error) {
         this.jhiAlertService.error(error.message, null, null);
+    }
+    
+    private round(num : number){
+    	return Math.round(num * 100) / 100
     }
 }
